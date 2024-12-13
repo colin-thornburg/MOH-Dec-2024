@@ -9,7 +9,6 @@ models:
   - name: policy_id
     description: A unique identifier for each policy.
     data_tests:
-      - unique
       - not_null
   - name: customer_id
     description: A unique identifier for each customer.

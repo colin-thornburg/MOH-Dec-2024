@@ -13,6 +13,9 @@ models:
     description: a unique identifier for the customer associated with the policy.
   - name: policy_type
     description: the type of insurance policy, such as auto, home, or life.
+    tests:
+      - accepted_values:
+          values: ['TERM', 'WHOLE', 'UNIVERSAL']
   - name: premium_amount
     description: the amount of money that the policyholder must pay for the insurance
       coverage.

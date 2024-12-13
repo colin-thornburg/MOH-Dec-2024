@@ -1,0 +1,51 @@
+semantic_models:
+- name: policy_customer_history
+  description: This model tracks the historical changes of customer policies, capturing
+    each version of a policy with its effective and valid time periods. It is used
+    to analyze policy changes over time and identify the current active policy for
+    each customer.
+  model: ref('dim_policy_customer_history')
+  defaults:
+    agg_time_dimension: valid_from
+  entities:
+  - name: policy
+    type: primary
+    expr: policy_id
+  - name: customer
+    type: foreign
+    expr: customer_id
+  dimensions:
+  - name: customer_name
+    type: categorical
+  - name: state
+    type: categorical
+  - name: dob
+    type: time
+    type_params:
+      time_granularity: day
+  - name: type
+    expr: policy_type
+    type: categorical
+  - name: effective_date
+    type: time
+    type_params:
+      time_granularity: day
+  - name: valid_from
+    type: time
+    type_params:
+      time_granularity: day
+  - name: valid_to
+    type: time
+    type_params:
+      time_granularity: day
+  - name: is_current
+    type: categorical
+  measures:
+  - name: premium_amount
+    description: The amount of premium to be paid for the policy.
+    agg: sum
+    create_metric: true
+  - name: count_customer
+    agg: count_distinct
+    create_metric: true
+    expr: customer_id
