@@ -1,8 +1,9 @@
--- models/marts/dim_policy_customer_history.sql
+
 {{
     config(
         materialized='incremental',
-        unique_key=['policy_id', 'valid_from']
+        unique_key=['policy_id', 'valid_from'],
+        on_schema_change='sync_all_columns'
     )
 }}
 

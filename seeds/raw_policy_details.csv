@@ -1,3 +1,3 @@
-policy_id,customer_id,policy_type,premium_amount,effective_date,dbt_loaded_at
-P001,C101,TERM,1500.00,2024-01-01,2024-03-15 10:00:00
-P004,C104,UNIVERSAL,3000.00,2024-03-15,2024-03-15 10:00:00
+policy_id,customer_id,policy_type,premium_amount,effective_date,dbt_loaded_at,my_new_column
+P001,C101,TERM,1500.00,2024-01-01,2024-03-15 10:00:00,my_new_value1
+P004,C104,UNIVERSAL,3000.00,2024-03-15,2024-03-15 10:00:00,my_new_value2

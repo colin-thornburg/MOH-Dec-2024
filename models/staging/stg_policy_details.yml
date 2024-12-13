@@ -1,0 +1,24 @@
+version: 2
+
+models:
+- name: stg_policy_details
+  description: this model provides detailed information about insurance policies,
+    including customer details, policy type, premium amount, and the effective date.
+    it is used to track and analyze policy data for business insights and operational
+    purposes.
+  columns:
+  - name: policy_id
+    description: a unique identifier for each insurance policy.
+  - name: customer_id
+    description: a unique identifier for the customer associated with the policy.
+  - name: policy_type
+    description: the type of insurance policy, such as auto, home, or life.
+  - name: premium_amount
+    description: the amount of money that the policyholder must pay for the insurance
+      coverage.
+  - name: effective_date
+    description: the date on which the insurance policy becomes active.
+  - name: my_new_column
+    description: a placeholder for additional data related to the policy.
+  - name: dbt_loaded_at
+    description: the timestamp indicating when the data was loaded into the dbt model.
