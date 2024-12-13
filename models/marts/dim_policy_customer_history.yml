@@ -6,6 +6,7 @@ models:
     each version of a policy with its effective and valid time periods. It is used
     to analyze policy changes over time and identify the current active policy for
     each customer.
+  access: public
   config:
     contract:
       enforced: true
