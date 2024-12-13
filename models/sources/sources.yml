@@ -1,0 +1,16 @@
+version: 2
+sources:
+  - name: raw_insurance
+    database: colint_demo
+    schema: raw_insurance
+    tables:
+      - name: raw_claim_details
+        description: JSON claim details from third-party system
+        columns:
+          - name: claim_id
+            tests:
+              - unique
+              - not_null
+          - name: claim_json
+            description: Variant column containing full claim details
+          - name: loaded_at

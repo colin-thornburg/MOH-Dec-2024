@@ -1,0 +1,23 @@
+version: 2
+
+models:
+- name: fct_claims_summary
+  description: this model provides a summary of insurance claims, aggregating data
+    to give insights into the total number of claims, the total and average claim
+    amounts, and the status of claims for each policy.
+  columns:
+  - name: policy_id
+    description: unique identifier for the insurance policy.
+    data_tests:
+      - unique
+      - not_null
+  - name: total_claims
+    description: total number of distinct claims associated with the policy.
+  - name: total_claim_amount
+    description: sum of all claim amounts for the policy.
+  - name: latest_claim_date
+    description: date of the most recent claim for the policy.
+  - name: approved_claims
+    description: number of claims that have been approved for the policy.
+  - name: avg_claim_amount
+    description: average amount of claims for the policy.
