@@ -1,0 +1,39 @@
+semantic_models:
+- name: claims_summary
+  description: This model provides a summary of insurance claims, aggregating data
+    to give insights into the total number of claims, the total and average claim
+    amounts, and the status of claims for each policy.
+  model: ref('fct_claims_summary')
+  defaults:
+    agg_time_dimension: latest_claim_date
+  entities:
+  - name: policy
+    type: primary
+    expr: policy_id
+  dimensions:
+  - name: latest_claim_date
+    description: Date of the most recent claim for the policy.
+    type: time
+    type_params:
+      time_granularity: day
+  measures:
+  - name: total_claims
+    description: Total number of distinct claims associated with the policy.
+    agg: sum
+    create_metric: true
+  - name: total_claim_amount
+    description: Sum of all claim amounts for the policy.
+    agg: sum
+    create_metric: true
+  - name: approved_claims
+    description: Number of claims that have been approved for the policy.
+    agg: sum
+    create_metric: true
+  - name: avg_claim_amount
+    description: Average amount of claims for the policy.
+    agg: average
+    create_metric: true
+  - name: count_policy
+    agg: count
+    create_metric: true
+    expr: policy_id
