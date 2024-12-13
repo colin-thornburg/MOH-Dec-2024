@@ -1,0 +1,10 @@
+snapshots:
+  - name: customer_scd
+    relation: ref('int_policy_customer')
+    description:  Handle SCD Type 2
+    config:
+      database: colint_demo
+      schema: colins_snapshots
+      strategy: timestamp
+      unique_key: policy_id
+      updated_at: dbt_loaded_at

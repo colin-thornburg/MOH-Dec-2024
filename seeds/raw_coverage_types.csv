@@ -1,0 +1,4 @@
+coverage_code,coverage_name,coverage_category,min_coverage_amount
+COV001,Term Life 10,TERM,100000
+COV002,Whole Life Basic,WHOLE,50000
+COV003,Universal Life,UNIVERSAL,75000
