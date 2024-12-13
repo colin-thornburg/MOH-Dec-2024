@@ -1,38 +1,54 @@
-version: 1
+version: 2
+
 models:
 - name: dim_policy_customer_history
   description: This model tracks the historical changes of customer policies, capturing
     each version of a policy with its effective and valid time periods. It is used
     to analyze policy changes over time and identify the current active policy for
     each customer.
+  config:
+    contract:
+      enforced: true
   columns:
   - name: policy_id
+    data_type: STRING
     description: A unique identifier for each policy.
-    data_tests:
-      - not_null
+    constraints:
+      - type: not_null
   - name: customer_id
+    data_type: STRING
     description: A unique identifier for each customer.
-    data_tests:
-      - not_null
+    constraints:
+      - type: not_null
   - name: customer_name
+    data_type: STRING
     description: The name of the customer associated with the policy.
   - name: state
+    data_type: STRING
     description: The state where the customer resides.
   - name: dob
+    data_type: DATE
     description: The date of birth of the customer.
   - name: policy_type
+    data_type: STRING
     description: The type of policy held by the customer.
   - name: premium_amount
+    data_type: NUMBER
     description: The amount of premium to be paid for the policy.
   - name: effective_date
+    data_type: DATE
     description: The date when the policy becomes effective.
   - name: valid_from
+    data_type: TIMESTAMP_LTZ
     description: The start date from which the policy version is valid.
-    data_tests:
-      - not_null
+    constraints:
+      - type: not_null
   - name: valid_to
+    data_type: TIMESTAMP_LTZ
     description: The end date until which the policy version is valid.
   - name: record_checksum
+    data_type: STRING
     description: A checksum value for ensuring data integrity of the record.
   - name: is_current
+    data_type: BOOLEAN
     description: Indicates whether the policy version is the current active version.
