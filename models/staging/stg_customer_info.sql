@@ -4,4 +4,4 @@ SELECT
     state,
     dob,
     CURRENT_TIMESTAMP() as dbt_loaded_at
-FROM {{ ref('raw_customer_info') }}
+FROM {{ source('raw_data', 'raw_customer_info') }}

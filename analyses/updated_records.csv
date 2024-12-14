@@ -13,3 +13,7 @@ C102,Jane Doe,IA,1975-08-22,2024-01-15 09:00:00
 C103,Bob Wilson,KS,1990-03-10,2024-02-01 10:00:00
 C101,John Smith,CO,1980-05-15,2024-03-15 10:00:00
 C104,Sarah Johnson,TX,1985-07-20,2024-03-15 10:00:00
+
+
+
+{{ codegen.generate_source(schema_name= 'DBT_MOH_CTHORNBURG', database_name= 'colint_demo', name='raw_data', generate_columns=true) }}

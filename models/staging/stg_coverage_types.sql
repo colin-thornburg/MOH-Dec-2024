@@ -1,2 +1,2 @@
 SELECT *
-FROM {{ ref('raw_coverage_types') }}
+FROM {{ source('raw_data', 'raw_coverage_types') }}
