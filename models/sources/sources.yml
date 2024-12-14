@@ -14,3 +14,70 @@ sources:
           - name: claim_json
             description: Variant column containing full claim details
           - name: loaded_at
+  - name: raw_data
+    schema: dbt_moh_cthornburg
+    tables:
+      - name: raw_claim_status
+        
+
+        columns:
+          - name: claim_id
+            data_type: varchar
+          - name: status
+            data_type: varchar
+          - name: updated_date
+            data_type: date
+          - name: adjuster_id
+            data_type: varchar
+
+      - name: raw_claims
+        columns:
+          - name: claim_id
+            data_type: varchar
+          - name: policy_id
+            data_type: varchar
+          - name: claim_amount
+            data_type: number
+          - name: claim_date
+            data_type: date
+
+      - name: raw_coverage_types
+        columns:
+          - name: coverage_code
+            data_type: varchar
+          - name: coverage_name
+            data_type: varchar
+          - name: coverage_category
+            data_type: varchar
+          - name: min_coverage_amount
+            data_type: number
+
+      - name: raw_customer_info
+        columns:
+          - name: customer_id
+            data_type: varchar
+          - name: name
+            data_type: varchar
+          - name: state
+            data_type: varchar
+          - name: dob
+            data_type: date
+          - name: dbt_loaded_at
+            data_type: timestamp_ntz
+
+      - name: raw_policy_details
+        columns:
+          - name: policy_id
+            data_type: varchar
+          - name: customer_id
+            data_type: varchar
+          - name: policy_type
+            data_type: varchar
+          - name: premium_amount
+            data_type: number
+          - name: effective_date
+            data_type: date
+          - name: dbt_loaded_at
+            data_type: timestamp_ntz
+          - name: my_new_column
+            data_type: varchar

@@ -12,4 +12,4 @@ SELECT
     {{ column }}{% if not loop.last %},{% endif %}
     {% endfor %},
     CURRENT_TIMESTAMP() as dbt_loaded_at
-FROM {{ ref('raw_policy_details') }}
+FROM {{ source('raw_data', 'raw_policy_details') }}
