@@ -1,4 +1,5 @@
 version: 2
+
 sources:
   - name: raw_insurance
     database: colint_demo
@@ -18,8 +19,6 @@ sources:
     schema: dbt_moh_cthornburg
     tables:
       - name: raw_claim_status
-        
-
         columns:
           - name: claim_id
             data_type: varchar
