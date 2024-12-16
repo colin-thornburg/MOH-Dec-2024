@@ -16,7 +16,7 @@ sources:
             description: Variant column containing full claim details
           - name: loaded_at
   - name: raw_data
-    schema: dbt_moh_cthornburg
+    schema: dbt_moh_cthornburg_raw_insurance
     tables:
       - name: raw_claim_status
         columns:

@@ -16,4 +16,4 @@ C104,Sarah Johnson,TX,1985-07-20,2024-03-15 10:00:00
 
 
 
-{{ codegen.generate_source(schema_name= 'DBT_MOH_CTHORNBURG', database_name= 'colint_demo', name='raw_data', generate_columns=true) }}
+{{ codegen.generate_source(schema_name= 'dbt_moh_cthornburg_raw_insurance', database_name= 'colint_demo', name='raw_data', generate_columns=true) }}
