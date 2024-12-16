@@ -1,0 +1,39 @@
+version: 2
+
+models:
+- name: stg_claim_details_flattened
+  description: This model consolidates claim details by flattening nested JSON structures
+    for diagnoses and treatments, providing a comprehensive view of each claim. It
+    is used to analyze healthcare claims data, including provider and patient information,
+    diagnosis codes, and treatment details.
+  columns:
+  - name: claim_id
+    description: A unique identifier for each insurance claim.
+    data_tests:
+      - not_null
+  - name: provider_id
+    description: The identifier for the healthcare provider associated with the claim.
+    data_tests:
+      - not_null
+  - name: provider_name
+    description: The name of the healthcare provider associated with the claim.
+  - name: provider_npi
+    description: The National Provider Identifier for the healthcare provider.
+  - name: provider_specialty
+    description: The specialty of the healthcare provider.
+  - name: patient_age
+    description: The age of the patient at the time of the claim.
+  - name: patient_gender
+    description: The gender of the patient.
+  - name: diagnosis_code
+    description: The code representing the diagnosis associated with the claim.
+  - name: diagnosis_description
+    description: A description of the diagnosis associated with the claim.
+  - name: procedure_code
+    description: The code for the procedure performed as part of the treatment.
+  - name: procedure_amount
+    description: The amount charged for the procedure.
+  - name: procedure_date
+    description: The date on which the procedure was performed.
+  - name: record_loaded_at
+    description: The timestamp when the record was loaded into the system.
