@@ -9,19 +9,30 @@ models:
   columns:
   - name: policy_id
     description: a unique identifier for each insurance policy.
+    data_tests:
+      - unique
+      - not_null
   - name: customer_id
     description: a unique identifier for the customer associated with the policy.
+    data_tests:
+      - not_null
   - name: policy_type
     description: the type of insurance policy, such as auto, home, or life.
-    tests:
+    data_tests:
       - accepted_values:
           values: ['TERM', 'WHOLE', 'UNIVERSAL']
   - name: premium_amount
     description: the amount of money that the policyholder must pay for the insurance
       coverage.
+    data_tests:
+      - not_null
   - name: effective_date
     description: the date on which the insurance policy becomes active.
+    data_tests:
+      - not_null
   - name: my_new_column
     description: a placeholder for additional data related to the policy.
   - name: dbt_loaded_at
     description: the timestamp indicating when the data was loaded into the dbt model.
+    data_tests:
+      - not_null

@@ -1,0 +1,23 @@
+models:
+- name: stg_coverage_types
+  description: This model extracts and stages coverage type data from the raw data
+    source for further analysis and reporting. It includes details about different
+    coverage types, their categories, and minimum coverage amounts.
+  columns:
+  - name: coverage_code
+    description: A unique code representing the type of coverage.
+    data_tests:
+      - unique
+      - not_null
+  - name: coverage_name
+    description: The name of the coverage type.
+    data_tests:
+      - not_null
+  - name: coverage_category
+    description: The category to which the coverage type belongs.
+    data_tests:
+      - not_null
+  - name: min_coverage_amount
+    description: The minimum amount required for this type of coverage.
+    data_tests:
+      - not_null

@@ -1,0 +1,25 @@
+version: 2
+
+models:
+- name: stg_customer_info
+  description: This model extracts and stages customer information from the raw data
+    source, including customer ID, name, state, and date of birth, along with a timestamp
+    indicating when the data was loaded into the system.
+  columns:
+  - name: customer_id
+    description: A unique identifier for each customer.
+    data_tests:
+      - unique
+      - not_null
+  - name: name
+    description: The full name of the customer.
+    data_tests:
+      - not_null
+  - name: state
+    description: The state where the customer resides.
+  - name: dob
+    description: The date of birth of the customer.
+  - name: dbt_loaded_at
+    description: The timestamp when the data was loaded into the dbt system.
+    data_tests:
+      - not_null
