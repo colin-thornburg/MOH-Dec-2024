@@ -1,4 +1,3 @@
-customer_id,name,state,dob,dbt_loaded_at
-C101,John Smith,NE,1980-05-15,2024-01-01 08:00:00
-C102,Jane Doe,IA,1975-08-22,2024-01-15 09:00:00
-C103,Bob Wilson,KS,1990-03-10,2024-02-01 10:00:00
+customer_id,name,state,dob,dbt_loaded_at,my_new_column
+C101,John Smith,CO,1980-05-15,2024-03-16 10:00:00,value_1
+C104,Sarah Johnson,TX,1985-07-20,2024-03-16 10:00:00,"value_2

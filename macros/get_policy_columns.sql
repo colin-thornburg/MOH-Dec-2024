@@ -4,7 +4,8 @@
         "customer_id",
         "policy_type",
         "premium_amount",
-        "effective_date"
+        "effective_date",
+        "my_new_column"
     ] %}
     {{ return(columns) }}
 {% endmacro %}
