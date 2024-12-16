@@ -1,0 +1,28 @@
+version: 2
+
+models:
+- name: stg_claims
+  description: This model extracts and stages claim data from the raw claims source,
+    providing essential details about each claim for further analysis and processing.
+  columns:
+  - name: claim_id
+    description: A unique identifier for each claim.
+    data_tests:
+      - unique
+      - not_null
+  - name: policy_id
+    description: The identifier for the policy associated with the claim.
+    data_tests:
+      - not_null
+  - name: claim_amount
+    description: The monetary amount of the claim.
+    data_tests:
+      - not_null
+  - name: claim_date
+    description: The date when the claim was made.
+    data_tests:
+      - not_null
+  - name: dbt_loaded_at
+    description: The timestamp when the data was loaded into the dbt model.
+    data_tests:
+      - not_null

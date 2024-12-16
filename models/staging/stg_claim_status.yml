@@ -1,0 +1,24 @@
+version: 1
+models:
+- name: stg_claim_status
+  description: This model provides a staging layer for claim status data, capturing
+    the current status of claims along with relevant metadata such as the adjuster
+    responsible and the last update date.
+  columns:
+  - name: claim_id
+    description: A unique identifier for each claim.
+    data_tests:
+      - unique
+      - not_null
+  - name: status
+    description: The current status of the claim.
+  - name: updated_date
+    description: The date when the claim status was last updated.
+    data_tests:
+      - not_null
+  - name: adjuster_id
+    description: The identifier for the adjuster responsible for the claim.
+  - name: dbt_loaded_at
+    description: The timestamp when the data was loaded into the dbt model.
+    data_tests:
+      - not_null
