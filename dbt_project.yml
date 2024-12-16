@@ -43,3 +43,8 @@ models:
       +materialized: table
     marts:
       +materialized: table
+
+seeds:
+  moh_demo:
+    schema: raw_insurance # Default schema for all seeds
+    database: colint_demo # Default database for all seeds
