@@ -2,6 +2,6 @@ SELECT
     customer_id,
     name,
     state,
-    dob,
+    dob
     CURRENT_TIMESTAMP() as dbt_loaded_at
 FROM {{ source('raw_data', 'raw_customer_info') }}
